@@ -1,0 +1,823 @@
+body {
+  text-align: center;
+  background-color: rgba(240, 240, 240, 0.63);
+  margin: 0px;
+}
+
+input:focus,
+button:focus,
+select:focus {
+  outline: none;
+}
+
+.myfont {
+  letter-spacing: 0.1em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-size: 15px;
+}
+
+.bgndimg {
+  background: url("./images/background7.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.centercnt {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.border5 {
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 5px;
+}
+
+.darkbngd {
+  background-color: rgba(10, 10, 10, 0);
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transition: background-color ease-out 500ms;
+  transition: opacity ease-out 500ms;
+}
+
+.outcover {
+  width: 70%;
+  background-color: rgb(56, 56, 56);
+  margin: 0px auto;
+  text-align: center;
+}
+
+.incover {
+  background-color: rgb(240, 240, 240);
+  display: inline-block;
+  margin: 0px 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* ************************************
+Header styles
+************************************ */
+
+header {
+  height: 600px;
+  width: 100%;
+  text-align: center;
+  box-sizing: content-box;
+}
+
+.backgnd {
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+header div {
+  margin: 0px auto;
+}
+
+.wrapper {
+  display: inline-block;
+  position: absolute;
+}
+
+header h1 {
+  opacity: 0.6;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 200;
+  text-align: center;
+  padding-left: 10px;
+  margin: 10px auto 0px auto;
+  font-size: 80px;
+}
+
+.aboutcontent {
+  opacity: 0.6;
+  transition: opacity ease-out 500ms;
+}
+
+.aboutcontent p {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  font-size: 16px;
+  width: 900px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  color: rgb(201, 199, 199);
+}
+
+.links {
+  display: inline-flex;
+  margin-top: 30px;
+  position: relative;
+}
+
+.getstarted {
+  padding: 5px;
+  width: 150px;
+  height: 40px;
+  margin: 0px 10px;
+  border-color: white;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nxt {
+  border-color: orangered;
+  color: orangered;
+  background-color: rgba(170, 170, 170, 0);
+  transition: 0.3s;
+}
+
+/* .getstarted:hover {
+  background-color: rgb(216, 48, 6);
+} */
+
+.lnkclr{
+  background-color: rgba(255, 68, 0, 0.582);
+  position: absolute;
+  border-radius: 5px;
+  z-index: -1;
+  top:0;
+  left: 0;
+  padding: 6px;
+  transition: left ease-out 400ms;
+}
+
+.link2:hover  .lnkclr{
+  left: 182px;
+}
+
+.nxt:hover{
+  border: 1px solid white;
+  color: white;
+}
+
+header:hover .welcome {
+  opacity: 0.8;
+}
+
+header:hover .aboutcontent {
+  opacity: 0.8;
+}
+
+/* ************************************
+Navigation bar styles
+************************************ */
+
+.navbar {
+  background-color: transparent;
+  padding: 8px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 5px;
+  position: fixed;
+  z-index: 2;
+  flex-wrap: wrap;
+  margin: 5px 0px;
+  top: 0;
+  transition: background-color ease-out 500ms;
+}
+
+.Home {
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar li {
+  margin: 4px 10px;
+}
+
+.menu {
+  display: inline-flex;
+  margin: 10px 0px 10px 20px;
+  float: left;
+  padding-left: 20px;
+}
+
+.navbar button {
+  float: right;
+}
+
+/* ************************************
+Navigation login menu styles
+************************************ */
+
+.login {
+  margin: 10px 0px;
+  position: fixed;
+  right: -500px;
+  transition: right ease-out 0.8s;
+  display: inline-block;
+  height: 500px;
+  width: 400px;
+  background-color: rgba(10, 10, 10, 0.74);
+  text-align: center;
+  top: 0;
+  z-index: 3;
+}
+
+.cut {
+  background: url("images/cutd.png") no-repeat center;
+  background-size: cover;
+  width: 5%;
+  height: 5%;
+  right: 20px;
+  top: 20px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.cut:hover {
+  background-image: url("images/cut.png");
+}
+
+.login input {
+  height: 40px;
+  width: 300px;
+  font-size: 13px;
+  background-color: rgba(30, 34, 31, 0.336);
+  padding: 0px 5px;
+  margin: 40px auto;
+  display: block;
+}
+
+.login hr {
+  width: 80%;
+  margin: 40px auto 80px auto;
+  opacity: 0.7;
+  border: 0.5px dashed white;
+}
+
+.lButton {
+  margin-right: 20px;
+  height: 40px;
+  width: 80px;
+  font-size: 13px;
+  background-color: rgba(200, 201, 200, 0.1);
+  cursor: pointer;
+}
+
+.lButton:hover {
+  background-color: rgba(200, 201, 200, 0.2);
+}
+
+.login h2 {
+  opacity: 0.6;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 200;
+  padding-left: 10px;
+  margin: 20px auto 50px auto;
+  font-size: 40px;
+}
+
+.navbar:hover .login {
+  opacity: 0.8;
+}
+
+/* ************************************
+Navigation  menu styles
+************************************ */
+#navicon {
+  display: inline-block;
+  margin-left: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: -12%;
+  padding: 4px;
+}
+
+.bars {
+  background-color: rgba(255, 250, 250, 0.897);
+  width: 30px;
+  height: 4px;
+  margin-bottom: 4px;
+  border-radius: 3px;
+  transition: transform ease-out 0.9s;
+  position: relative;
+}
+
+#navicon:hover .bars {
+  background-color: rgb(160, 160, 160);
+}
+
+.close div:nth-child(1),
+.close div:nth-child(4) {
+  opacity: 0;
+}
+
+.close div:nth-child(2) {
+  transform: rotate(45deg);
+  width: 20px;
+  top: 4px;
+}
+.close div:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 4px;
+  width: 20px;
+}
+
+.navmenu {
+  text-align: left;
+  left: -25.5%;
+  position: fixed;
+  display: inline-block;
+  height: 300px;
+  width: 25%;
+  background-color: rgba(10, 10, 10, 0.74);
+  text-align: left;
+  top: 0%;
+  z-index: 3;
+  margin: 10px 5px;
+  transition: left ease-out 500ms;
+}
+
+.navmenu h2 {
+  font-size: 20px;
+  margin: 10px;
+  margin-left: 30px;
+  opacity: 0.6;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 200;
+  padding-left: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: left ease-out 1000ms;
+}
+
+.hme {
+  left: -200px;
+}
+
+.abt {
+  left: -700px;
+}
+
+.cntct {
+  left: -1200px;
+}
+
+.support {
+  left: -1700px;
+}
+
+.navmenu hr {
+  width: 90%;
+  margin: 10px 0px;
+  text-align: left;
+  opacity: 0.7;
+  border: 0.5px solid rgba(0, 0, 0, 0.603);
+}
+
+/* ************************************
+Connect with author styles
+************************************ */
+
+.connect {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(223, 223, 223, 0.5);
+  background-size: cover;
+  margin: 15px 0px;
+}
+
+.socialwrap {
+  display: inline-flex;
+}
+
+.social {
+  width: 300px;
+  height: 210px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(53, 53, 247);
+  margin: 20px;
+  transform: scale(1);
+  transition: transform 0.5s ease-out;
+}
+
+.social:hover {
+  transform: scale(1.1);
+}
+
+/* ************************************
+Search bar styles
+************************************ */
+
+.find {
+  height: 300px;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.find h2 {
+  font-size: 25px;
+  margin: 20px auto;
+}
+
+.srch {
+  width: 350px;
+  height: 38px;
+  font-size: 17px;
+  color: black;
+  padding-left: 10px;
+  border: 2px solid orangered;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: block;
+}
+
+.searchbar button {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-style: none;
+  background: url(images/mail_find.png) center no-repeat;
+  background-size: 80%;
+  background-color: orangered;
+  height: 40px;
+  margin-left: 2px;
+  width: 40px;
+}
+
+.SButton:hover {
+  background-color: rgb(248, 37, 9);
+  opacity: 1;
+}
+
+.searchbar {
+  margin: 10px auto;
+  display: flex;
+  z-index: 1;
+}
+
+.findwrap {
+  opacity: 0.5;
+}
+.find:hover .findwrap {
+  opacity: 0.8;
+}
+
+/* ************************************
+Featured topics styles
+************************************ */
+
+.article {
+  display: inline-block;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  width: 100%;
+}
+
+.topics {
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+}
+
+.wrapheader h2 {
+  font-size: 25px;
+  color: black;
+  background-color: rgba(240, 240, 240, 1);
+}
+
+.wrapheader {
+  width: 83%;
+  margin-top: 30px;
+}
+
+.topicLists {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.topicwrap {
+  display: inline-block;
+  width: 100%;
+  height: 210px;
+  position: relative;
+}
+
+.topicwrap::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: grey;
+  opacity: 0;
+  transition: opacity ease-out 500ms;
+}
+
+.topicContent {
+  position: relative;
+  width: 540px;
+  display: inline-block;
+  text-align: center;
+  background-color: white;
+  margin: 20px;
+}
+
+.topicContent:hover .topicwrap::before {
+  opacity: 0.4;
+}
+
+.topicContent p {
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: grey;
+  text-align: justify;
+  padding: 10px 40px;
+}
+
+.topicContent:hover .view {
+  opacity: 1;
+  z-index: 1;
+}
+
+.userwrapper {
+  margin: 0px auto;
+  padding: 10px 20px;
+  text-align: center;
+  color: black;
+  display: inline-block;
+  transition: color ease-out 200ms;
+}
+
+.lbrk {
+  color: grey;
+  width: 70%;
+}
+
+.userdetails {
+  display: inline-flex;
+  margin: 15px auto;
+}
+
+.userdetails h2 {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: grey;
+  margin: 20px 0px;
+}
+
+.titletopic {
+  font-size: 27px;
+  text-align: justify;
+  margin-left: 8%;
+}
+
+.topicbutton {
+  width: 80px;
+  height: 40px;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: white;
+  font-size: 1.15em;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  background-color: blue;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.topicbutton:hover {
+  opacity: 0.9;
+}
+
+.topicContent::after {
+  content: " ";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.05em;
+  left: 1.05em;
+  right: 1.05em;
+  opacity: 0.6;
+  border-left: 1px solid rgb(80, 80, 80);
+  border-right: 1px solid rgb(80, 80, 80);
+  transform: scale(1, 0);
+  transition: transform ease-out 300ms;
+}
+
+.topicContent::before {
+  content: " ";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.05em;
+  left: 1.05em;
+  right: 1.05em;
+  opacity: 0.6;
+  border-top: 1px solid rgb(80, 80, 80);
+  border-bottom: 1px solid rgb(80, 80, 80);
+  transform: scale(0, 1);
+  transition: transform ease-out 300ms;
+  z-index: 1;
+}
+
+.topicContent:hover::before {
+  transform: scale(1.03, 1);
+}
+
+.topicContent:hover::after {
+  transform: scale(1, 1.05);
+}
+
+.t1 {
+  background: url("./images/back12.jpg") no-repeat;
+  background-size: cover;
+}
+
+.t2 {
+  background: url("./images/navbar1.png") no-repeat;
+  background-size: cover;
+}
+
+.view {
+  font-size: 1.15em;
+  font-weight: bold;
+  padding: 0.1em;
+  width: 7em;
+  height: 2.6em;
+  border: 0.4em solid white;
+  background-color: rgb(56, 56, 56);
+  color: white;
+  top: 180px;
+  left: 37%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity ease-out 500ms;
+}
+
+.view:hover {
+  background-color: rgb(94, 91, 91);
+}
+
+/* ************************************
+Register form styles
+************************************ */
+
+.register {
+  display: inline-block;
+  width: 500px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.regbgnd {
+  opacity: 0.75;
+  transition: opacity ease-out 500ms;
+}
+
+.my-form {
+  margin: 10px;
+  display: inline-block;
+}
+
+.my-form input {
+  border: none;
+  border-bottom: 1px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  box-shadow: 5px;
+  width: 400px;
+  height: 30px;
+  padding: 5px;
+  margin: 30px 5px;
+  display: block;
+  background-color: rgba(30, 34, 31, 0.336);
+  padding: 0px 5px;
+  margin: 40px auto;
+}
+
+.my-form hr {
+  width: 80%;
+  margin: 40px auto 80px auto;
+  opacity: 0.7;
+  border: 0.5px dashed rgb(235, 233, 233);
+}
+
+.register:hover .darkbgnd {
+  background-color: rgba(30, 34, 31, 0.5);
+  opacity: 1;
+}
+
+.register:hover .navbar {
+  background-color: transparent;
+}
+
+.myb {
+  margin-right: 20px;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  background-color: rgba(200, 201, 200, 0.1);
+  cursor: pointer;
+}
+
+.myb:hover {
+  background-color: rgba(200, 201, 200, 0.2);
+}
+
+.my-form h2 {
+  opacity: 0.6;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 200;
+  padding-left: 10px;
+  margin: 20px auto 50px auto;
+  font-size: 40px;
+}
+
+.my-form input:hover,
+.my-form select:hover {
+  box-shadow: 2px 0px 3px rgba(128, 127, 127, 0.726);
+}
+
+.gender {
+  color: rgba(192, 192, 192, 0.65);
+}
+
+.gender select {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-bottom-style: solid;
+  background-color: rgba(30, 34, 31, 0.336);
+  box-shadow: 5px;
+  border: white;
+  padding: 5px;
+  margin: 10px 5px;
+  color: rgba(192, 192, 192, 0.6);
+}
+
+.gender option {
+  background-color: rgb(0, 0, 0);
+}
+
+.gender span {
+  margin: 10px 0px;
+  padding: 5px;
+}
+
+/* ************************************
+Footer styles
+************************************ */
+
+footer {
+  margin: 50px 0px 0px 0px;
+  width: 100%;
+  height: 150px;
+  text-align: initial;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.858);
+  font-family: "Courier New", Courier, monospace;
+}
+
+footer p {
+  text-align: center;
+  font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 20px 0px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.authordetails {
+  display: inline-block;
+  float: left;
+  margin: 0px 30px;
+}
+
+.others {
+  display: inline-block;
+  float: right;
+  margin: 0px 30px;
+}
+
+.pheader {
+  height: 400px;
+}
+
+.backgnd {
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+}
