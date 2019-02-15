@@ -1,0 +1,203 @@
+@font-face {
+  font-family: myresponsa;
+  src: url("fonts/Darleston.otf");
+}
+
+body {
+  text-align: center;
+  background-color: rgba(202, 202, 202, 0.459);
+  margin: 0px;
+  position: relative;
+}
+
+input:focus,
+button:focus,
+select:focus {
+  outline: none;
+}
+
+.myfont {
+  letter-spacing: 0.1em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  left: 0;
+  right: 0;
+  color: white;
+  background: url("../images/tech1l.jpeg") no-repeat center;
+  background-size: cover;
+  z-index: 2;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  top: 0;
+}
+
+.cover {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 2px solid rgb(49, 100, 100);
+}
+
+.bgnd {
+  background-color: rgba(0, 12, 6, 0.7);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 24%;
+  bottom: 0;
+}
+
+.responsa {
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  right: 0%;
+  bottom: 0;
+  align-self: center;
+  color: rgba(255, 255, 255, 0.961);
+  font-family: myresponsa;
+  font-size: 5em;
+  letter-spacing: 0.1em;
+  font-weight: 100;
+}
+
+.find {
+  position: relative;
+  top: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.find input {
+  width: 40%;
+  height: 30px;
+  background-color: transparent;
+  background: url("../images/mail_find.png") no-repeat;
+  background-size: 6%;
+  background-position: 99% 50%;
+  color: white;
+  font-size: 1em;
+  padding: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  border: 1px solid orangered;
+}
+
+/* ************************************
+  Navigation bar styles
+  ************************************ */
+
+.navbar {
+  background-color: rgb(0, 7, 12);
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  color: white;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.navbar p {
+  font-family: myresponsa;
+  font-size: 1.8em;
+  float: left;
+  letter-spacing: 0.1em;
+  margin: 10px;
+}
+
+.ulwrap {
+  float: right;
+  margin-right: 20px;
+  display: inline;
+}
+
+.ulwrap div {
+  display: inline-flex;
+  height: 58px;
+  border-bottom: 2px solid rgba(0, 0, 255, 0);
+  transition: all ease-out 300ms;
+  cursor: pointer;
+  padding: 0px 5px;
+}
+
+.navbar a {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin: 0px 5px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.ulwrap div:hover {
+  border-bottom: 2px solid rgb(49, 100, 100);
+}
+
+.ulwrap div:nth-child(3) a {
+  background-color: orangered;
+  padding: 10px;
+}
+
+.mainbody {
+  display: inline-flex;
+  padding: 10px 0;
+  width: 100%;
+  margin: 240px auto 0 auto;
+  position: relative;
+}
+
+.main {
+  padding: 10px 0;
+  width: 79%;
+}
+
+.sidebar {
+  background-color: #20262e;
+  border-left: 2px solid rgb(49, 100, 100);
+  width: 20%;
+  height: 100%;
+  padding: 10px 0;
+  position: fixed;
+  right: 0;
+}
+
+.lbrk {
+  width: 97%;
+  margin: 70px auto 50px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: rgba(48, 48, 48, 0.404);
+}
+
+.createTopic {
+  margin: 0px 50% 0px 5%;
+}
+
+.createTopic textarea {
+  min-width: 90%;
+  min-height: 150px;
+  max-width: 90%;
+  max-height: 150px;
+  display: block;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.createTopic a {
+  margin-top: 1em;
+  padding: 0.7em 1em;
+  color: white;
+  font-size: 0.9em;
+  background-color: rgba(17, 17, 17, 0.877);
+  cursor: pointer;
+}
