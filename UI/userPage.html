@@ -5,10 +5,31 @@
     <link rel="stylesheet" href="CSS/userpage.css">
 </head>
 <body>
+        <p class="one">Responsa</p>
         <div class="cover">
             <header >
                 <div class="bgnd"> </div>
-                <h1 class="responsa">Responsa</h1>
+                <div class="notifbar">
+                     <div class="notif">
+                        <span class="notifnum">4</span>
+                         <a href="#">Notification</a>
+                     </div>
+                     <div>
+                          <a href="#">Logout</a>
+                     </div>
+                    
+                </div>
+                <h1 class="responsa">John Doe</h1>
+                <div class="menu">
+                    <div class="editprofile">
+                        <div class="imgwrap"></div>
+                        <a href="">Edit Profile</a>
+                    </div>
+                    <div class="settings">
+                         <a href="#" class="set">Edit Settings</a>
+                    </div>
+                   
+                </div>
                 <nav class="navbar">
                     <!-- <div class="navmenu">
                             <div id="navicon" class="">
@@ -27,64 +48,306 @@
                     </div>  -->
                     
                     <div class="navcontent">
-                        <p class="one">Responsa</p>
+                        
+                        <div class="searchbar look">
+                                <input id = "search"  type="text"  placeholder="Search Topics" >
+                        </div>  
                         <div class="ulwrap">
-                                <div><a href="#">Home</a></div>
-                                <div><a href="#">Profile</a></div>
-                                <div><a href="#">Notification</a></div>
-                                <div><a href="#">Settings</a></div>
-                                <div><a href="#">Help</a></div>
-                                <div><a href="#">Logout</a></div>
+                                <div> <img src="images/user.png" alt="" ><a href="#">Profile</a></div>
+                                <div> <img src="images/settings.png" alt="" ><a href="#">Settings</a></div>
+                                <div> <img src="images/logout.png" alt="" ><a href="#">Logout</a></div>
                         </div>
                         
                     </div>
                 </nav>
-                    <div class="find">
+                    <div class="searchbar find">
                         <input id = "search" class="srch"  type="text"  placeholder="Search Topics" >
                     </div>   
             </header>
         </div>
+
+        <div class="sidebar">
+            <div class="fb"></div>
+            <div class="twitr"></div>
+            <div class="yout"></div>
+        </div>
     <div class="mainbody">
         <div class="main">
             <div class="createTopic">
-                <textarea class="createfield"  placeholder="Create a topic"></textarea>
-                <div class="file-input">
-                        <button >Add photo</button>
-                        <input type="file" name="file" />
+                <div class="postwrap">
+                    <div class="imgwrap"></div>
+                    <div class="inputwrap">
+                        <input type="text" placeholder="Create Topic title" class="createtopictitle">
+                        <textarea class="createfield"  placeholder="Create a topic"></textarea>
+                    </div>     
                 </div>
-                <a href="" class="create">Create topic</a>
+                
+                <div class="linkwrappers">
+                    <div class="file-input">
+                        <button class="addphoto">Add photo</button>
+                        <input type="file" name="file" class="createimgfile" accept="image/*" data-max-size="2000"/>
+                    </div>
+                    <span class="create">Create topic</span>
+                </div>
+                
             </div>
             <div class="article">
                 <div class="topic">
                     <div class="topiccontent">
                         <div class="topicwrapper">
                             <div class="userdetail">
-                                <div class="userpic">
-                                    <img src="" alt="" class="userimg">
-                                </div>
+                                    <img src="images/dummy2.jpeg" alt="" class="userimg">
                                 <a href="#" class="userName">John Doe</a>
+                                <div class="replywrap">
+                                    <span class="date"> Feb 18 2019</span>
+                                    <span class="reply">7</span>
+                                </div>
                             </div>
                             <h2 class="head"> MPU6050</h2> 
-                            <img src="" alt="" class="topicimg">
+                            <img src="images/responsabng4.jpg" alt="" class="topicimg">
                             <p class="topictexts">
-
-                        </p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestias 
+                                aliquid ea ratione omnis labore cupiditate optio culpa dolorum, error facere eum 
+                                adipisci placeat qui
+                            </p>
                         </div>
-                        <div class="solnbar">
-                            <input type="text">
-                            <p class="solnno"></p>
-                            <a href="#">View solutions</a>
-                        </div>
-                        <div class="solns"></div>
-                        
-                    </div>
+                        <div class="solnwrapper">
+                            <div class="solnbar">
+                                <textarea name="" class="solution" placeholder=" Give a Reply...."></textarea>
+                                <div class="send"></div>
+                            </div>
+                            <div class="solns">
+                                
+                                <div>
+                                    <div class="solnuser">
+                                        <span href="" class="solnusername">John doe</span>
+                                        <span href="" class="approve">8</span>
+                                        <span href="" class="dissaprove">2</span>
+                                        
+                                    </div>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                        elit. Quisquam ad molestiae laborios
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="solnuser">
+                                        <span href="" class="solnusername">John doe</span>
+                                        <span href="" class="approve">8</span>
+                                        <span href="" class="dissaprove">2</span> 
+                                    </div>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur adipisici
+                                    </p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>    
+                    <div class="topiccontent">
+                            <div class="topicwrapper">
+                                <div class="userdetail">
+                                    <div class="userpic">
+                                        <img src="images/dummy3.jpg" alt="" class="userimg">
+                                    </div>
+                                    <a href="#" class="userName">Jude Violet</a>
+                                    <div class="replywrap">
+                                            <span class="date"> Jun 9 2019</span>
+                                            <span class="reply">23</span>
+                                    </div>
+                                </div>
+                                <h2 class="head"> LIVING WITH A LADIES NAME</h2> 
+                                <img src="images/bg.jpg" alt="" class="topicimg">
+                                <p class="topictexts">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aperiam r
+                                    atione alias et asperiores ea quos nisi odio excepturi ipsa, aspernatur, voluptatem 
+                                    optio sit culpa libero, vero tenetur inventore. Nulla.
+                                </p>
+                            </div>
+                            <div class="solnwrapper">
+                                    <div class="solnbar">
+                                        <textarea name="" class="solution" placeholder=" Give a Reply...."></textarea>
+                                        <div class="send"></div>
+                                    </div>
+                                    <div class="solns">
+                                        
+                                        <div>
+                                            <div class="solnuser">
+                                                <span href="" class="solnusername">John doe</span>
+                                                <span href="" class="approve">8</span>
+                                                <span href="" class="dissaprove">2</span>
+                                                
+                                            </div>
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                                elit. Quisquam ad molestiae laborios
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div class="solnuser">
+                                                <span href="" class="solnusername">John doe</span>
+                                                <span href="" class="approve">8</span>
+                                                <span href="" class="dissaprove">2</span> 
+                                            </div>
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisici
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div class="solnuser">
+                                                <span href="" class="solnusername">John doe</span>
+                                                <span href="" class="approve">8</span>
+                                                <span href="" class="dissaprove">2</span>
+                                                
+                                            </div>
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                                elit. Quisquam ad molestiae laborios
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div class="solnuser">
+                                                <span href="" class="solnusername">John doe</span>
+                                                <span href="" class="approve">8</span>
+                                                <span href="" class="dissaprove">2</span>
+                                                
+                                            </div>
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                                elit. Quisquam ad molestiae laborios
+                                                Lor
+                                                xem ipsum dolor sit amet consectetur, adipisicing 
+                                                elit. Optio aliquam voluptate voluptatum dolores ius
+                                             </p>
+                                        </div>
+                                        <div>
+                                            <div class="solnuser">
+                                                <span href="" class="solnusername">John doe</span>
+                                                <span href="" class="approve">8</span>
+                                                <span href="" class="dissaprove">2</span>
+                                                
+                                            </div>
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisici
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div class="solnuser">
+                                                <span href="" class="solnusername">John doe</span>
+                                                <span href="" class="approve">8</span>
+                                                <span href="" class="dissaprove">2</span>
+                                                
+                                            </div>
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                                elit. Quisquam ad molestiae laborios
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div class="solnuser">
+                                                <span href="" class="solnusername">John doe</span>
+                                                <span href="" class="approve">8</span>
+                                                <span href="" class="dissaprove">2</span>
+                                                
+                                            </div>
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                                elit. Quisquam ad molestiae laborios
+                                                Lor
+                                                em ipsum dolor sit amet consectetur, adipisicing 
+                                                elit. Optio aliquam voluptate voluptatum dolores ius
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             
+                    </div>
+                    <div class="topiccontent">
+                        <div class="topicwrapper">
+                            <div class="userdetail">
+                                <div class="userpic">
+                                    <img src="images/dummy4.jpg" alt="" class="userimg">
+                                </div>
+                                <a href="#" class="userName">Justin Igugu</a>
+                                <div class="replywrap">
+                                        <span class="date"> Mar 1 2019</span>
+                                        <span class="reply">19</span>
+                                </div>
+                            </div>
+                            <h2 class="head">ROUTE TO AGBARA</h2> 
+                            
+                            <img src="images/black_macbook_air.jpg" alt="" class="topicimg">
+                            <p class="topictexts">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Obcaecati quo perspiciatis praesentium quaerat reiciendis deleniti earum 
+                                    voluptates similique, harum architecto quibusdam repellat
+                                    debitis omnis quia vel eaque quae maiores ex!
+                                </p>
+                        </div>
+                        <div class="solnwrapper">
+                                <div class="solnbar">
+                                    <textarea name="" class="solution" placeholder=" Give a Reply...."></textarea>
+                                    <div class="send"></div>
+                                </div>
+                                <div class="solns">
+                                    
+                                    <div>
+                                        <div class="solnuser">
+                                            <span href="" class="solnusername">John doe</span>
+                                            <span href="" class="approve">8</span>
+                                            <span href="" class="dissaprove">2</span>
+                                            
+                                        </div>
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                            elit. Quisquam ad molestiae laborios
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div class="solnuser">
+                                            <span href="" class="solnusername">John doe</span>
+                                            <span href="" class="approve">8</span>
+                                            <span href="" class="dissaprove">2</span> 
+                                        </div>
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisici
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div class="solnuser">
+                                            <span href="" class="solnusername">John doe</span>
+                                            <span href="" class="approve">8</span>
+                                            <span href="" class="dissaprove">2</span>
+                                            
+                                        </div>
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                            elit. Quisquam ad molestiae laborios
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div class="solnuser">
+                                            <span href="" class="solnusername">John doe</span>
+                                            <span href="" class="approve">8</span>
+                                            <span href="" class="dissaprove">2</span>
+                                            
+                                        </div>
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing 
+                                            elit. Quisquam ad molestiae laborios
+                                            Lor
+                                            xem ipsum dolor sit amet consectetur, adipisicing 
+                                            elit. Optio aliquam voluptate voluptatum dolores ius
+                                         </p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
                     
                 </div>
             </div>        
         </div>
-        <div class="sidebar"></div>
   
     <script src = "JS/userpage.js"></script>
+    <script src = "JS/userpage2.js"></script>
 </body>
 </html>
