@@ -13,10 +13,8 @@ let newsFeed = [
     title: "MPU6050",
     topicUser: "John Doe",
     topicDate: "Feb 5 2019",
-    userImg:
-      "http://2.bp.blogspot.com/-M4AaFPHtjgY/Up6heG0iFZI/AAAAAAAABs8/4mtrsepOqCM/s1600/Nice+Wallpapers+(13).jpg",
-    topicImg:
-      "https://cdn.pixabay.com/photo/2018/01/05/02/42/background-3062023_960_720.jpg",
+    userImg: "images/dummy3.jpg",
+    topicImg: "images/responsabng4.jpg",
     topicContent: "lorem shit bla bla bla",
     comments: [
       {
@@ -51,10 +49,8 @@ let newsFeed = [
     title: "ROUTE TO AGBARA",
     topicUser: "Justin igugu",
     topicDate: "Feb 15 2009",
-    userImg:
-      "http://4.bp.blogspot.com/-w3I5XQ1vWbg/Up6hKWsBRrI/AAAAAAAABss/I7_nbS_7wQ0/s1600/Nice+Wallpapers+(12).jpg",
-    topicImg:
-      "http://3.bp.blogspot.com/-2XY289Z6P7A/Up6g55D5xbI/AAAAAAAABsk/p87ndYSjTzE/s1600/Nice+Wallpapers+(10).jpg",
+    userImg: "images/dummy4.jpg",
+    topicImg: "images/black_macbook_air.jpg",
     topicContent: "lorem shit bla bla bla",
     comments: [
       {
@@ -89,10 +85,8 @@ let newsFeed = [
     title: "HBRIDGE DESIGN",
     topicUser: "Amoslv",
     topicDate: "Feb 5 2019",
-    userImg:
-      "http://4.bp.blogspot.com/-Yhi4Yx5G5NM/Up6hobt7o5I/AAAAAAAABtE/-puGXav1c30/s1600/Nice+Wallpapers+(1).jpg",
-    topicImg:
-      "https://cdn.pixabay.com/photo/2014/05/03/00/42/vw-camper-336606_960_720.jpg",
+    userImg: "images/dummy2.jpeg",
+    topicImg: "images/bg.jpg",
     topicContent: "lorem shit bla bla bla",
     comments: [
       {
@@ -142,7 +136,7 @@ const postUpload = post => {
       //make server request
       newsFeed.push(post.content);
       let newpost = createTopic(newsFeed[newsFeed.length - 1]);
-      newtopic.insertBefore(newpost, newtopic.children[0]);
+      newtopic.insertBefore(newpost, newtopic.children[1]);
     });
   });
 };
