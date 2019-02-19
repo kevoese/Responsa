@@ -1,4 +1,5 @@
 const newtopic = document.querySelector(".topic");
+let commentsBar = null;
 
 const imageInput = document.querySelector(".createimgfile");
 const postContenTitle = document.querySelector(".createtopictitle");
@@ -21,7 +22,7 @@ let newsFeed = [
       {
         commentUser: "Paul efe",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 0
       },
@@ -29,7 +30,7 @@ let newsFeed = [
       {
         commentUser: "Paul efe",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 1
       },
@@ -37,7 +38,7 @@ let newsFeed = [
       {
         commentUser: "Paul efe",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 2
       }
@@ -59,7 +60,7 @@ let newsFeed = [
       {
         commentUser: "victor efe",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 0
       },
@@ -67,7 +68,7 @@ let newsFeed = [
       {
         commentUser: "tega amos",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 1
       },
@@ -75,7 +76,7 @@ let newsFeed = [
       {
         commentUser: "voilet justin",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 2
       }
@@ -97,7 +98,7 @@ let newsFeed = [
       {
         commentUser: "karo",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 0
       },
@@ -105,7 +106,7 @@ let newsFeed = [
       {
         commentUser: "kevo",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 1
       },
@@ -113,7 +114,7 @@ let newsFeed = [
       {
         commentUser: "Jude",
         approve: 3,
-        dissapprove: 5,
+        disapprove: 5,
         commentContent: "some comment shits here",
         commentID: 2
       }
@@ -140,7 +141,8 @@ const postUpload = post => {
       post.content.topicImg = data.data.link;
       //make server request
       newsFeed.push(post.content);
-      displayfeed(newsFeed);
+      let newpost = createTopic(newsFeed[newsFeed.length - 1]);
+      newtopic.insertBefore(newpost, newtopic.children[0]);
     });
   });
 };
@@ -176,28 +178,34 @@ createElement = (element, classname) => {
   return div;
 };
 
+createSingleComment = (comment, topicID) => {
+  let CommentDiv = createElement("div", "");
+  CommentDiv.id = topicID + "_" + comment.commentID;
+  let solnuser = createElement("div", "solnuser");
+  let solnusername = createElement("span", "solnusername");
+  solnusername.textContent = comment.commentUser;
+  let approve = createElement("span", "approve");
+  approve.textContent = comment.approve + "";
+  let disapprove = createElement("span", "disapprove");
+  disapprove.textContent = comment.disapprove + "";
+  solnuser.appendChild(solnusername);
+  solnuser.appendChild(approve);
+  solnuser.appendChild(disapprove);
+  let commentText = createElement("p", "");
+  commentText.textContent = comment.commentContent;
+  CommentDiv.appendChild(solnuser);
+  CommentDiv.appendChild(commentText);
+
+  return CommentDiv;
+};
+
 createComments = post => {
   let solns = createElement("div", "solns");
-  let arr = post.comments;
+  let refresh = createElement("div", "refresh");
+  solns.appendChild(refresh);
+  let arr = post.comments.reverse();
   arr.forEach(comment => {
-    let CommentDiv = createElement("div", "");
-    CommentDiv.id = post.topicID + "_" + comment.commentID;
-    let solnuser = createElement("div", "solnuser");
-    let solnusername = createElement("span", "solnusername");
-    solnusername.textContent = comment.commentUser;
-    let approve = createElement("span", "approve");
-    approve.textContent = comment.approve + "";
-    let dissapprove = createElement("span", "dissaprove");
-    dissapprove.textContent = comment.dissapprove + "";
-    solnuser.appendChild(solnusername);
-    solnuser.appendChild(approve);
-    solnuser.appendChild(dissapprove);
-    let commentText = createElement("p", "");
-    commentText.textContent = comment.commentContent;
-    CommentDiv.appendChild(solnuser);
-    CommentDiv.appendChild(commentText);
-
-    solns.appendChild(CommentDiv);
+    solns.appendChild(createSingleComment(comment, post.topicID));
   });
   return solns;
 };
@@ -251,13 +259,49 @@ createTopic = post => {
   topicContent.appendChild(topicwrapper);
   topicContent.appendChild(solnwrapper);
 
-  newtopic.appendChild(topicContent);
+  return topicContent;
+  //   newtopic.appendChild(topicContent);
 };
 
 displayfeed = newsFeed => {
   newsFeed.reverse().forEach(post => {
-    createTopic(post);
+    newtopic.appendChild(createTopic(post));
   });
+  commentsBar = document.querySelectorAll(".solnwrapper");
 };
 
 displayfeed(newsFeed);
+
+commentsBar.forEach(div => {
+  div.addEventListener("click", event => {
+    let classType = event.target.className;
+    if (classType == "approve" || classType == "disapprove") {
+      let myStr = event.target.parentElement.parentElement.id;
+      let arr = myStr.split("_");
+      newsFeed[arr[0]].comments[arr[1]][classType] += 1;
+      console.log(newsFeed[arr[0]].comments[arr[1]].commentUser);
+      event.target.textContent = newsFeed[arr[0]].comments[arr[1]][classType];
+    }
+
+    if (classType == "send") {
+      let commentBar = event.target.parentElement.nextSibling;
+      let topicID = event.target.parentElement.id;
+      let comment = event.target.previousSibling.value;
+      event.target.previousSibling.value = "";
+      let newComment = {
+        commentUser: "John",
+        approve: 0,
+        disapprove: 0,
+        commentContent: comment,
+        commentID: newsFeed[topicID].comments.length
+      };
+      newsFeed[topicID].comments.push(newComment);
+      let commentDiv = createSingleComment(newComment, topicID);
+      commentBar.insertBefore(commentDiv, commentBar.children[1]);
+      let commentNum = event.target.parentElement.parentElement.parentElement.querySelector(
+        ".reply"
+      );
+      commentNum.textContent = newsFeed[topicID].comments.length;
+    }
+  });
+});

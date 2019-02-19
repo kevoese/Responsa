@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>RESPONSA</title>
+        <title>USERPAGE</title>
     <link rel="stylesheet" href="CSS/userpage.css">
 </head>
 <body>
@@ -53,15 +53,15 @@
                                 <input id = "search"  type="text"  placeholder="Search Topics" >
                         </div>  
                         <div class="ulwrap">
-                                <div> <img src="images/user.png" alt="" ><a href="#">Profile</a></div>
-                                <div> <img src="images/settings.png" alt="" ><a href="#">Settings</a></div>
-                                <div> <img src="images/logout.png" alt="" ><a href="#">Logout</a></div>
+                                <div> <a href="#">Profile</a></div>
+                                <div><a href="#">Settings</a></div>
+                                <div><a href="#">Logout</a></div>
                         </div>
                         
                     </div>
                 </nav>
                     <div class="searchbar find">
-                        <input id = "search" class="srch"  type="text"  placeholder="Search Topics" >
+                        <input id = "search" class="srch"  type="text"  placeholder="Search Topics..." >
                     </div>   
             </header>
         </div>
@@ -93,7 +93,8 @@
             </div>
             <div class="article">
                 <div class="topic">
-                    <div class="topiccontent">
+                     <div class="feedrefresh"></div>
+                     <div class="topiccontent"> 
                         <div class="topicwrapper">
                             <div class="userdetail">
                                     <img src="images/dummy2.jpeg" alt="" class="userimg">
@@ -117,12 +118,12 @@
                                 <div class="send"></div>
                             </div>
                             <div class="solns">
-                                
+                                <div class="refresh"></div>
                                 <div>
                                     <div class="solnuser">
                                         <span href="" class="solnusername">John doe</span>
                                         <span href="" class="approve">8</span>
-                                        <span href="" class="dissaprove">2</span>
+                                        <span href="" class="disapprove">2</span>
                                         
                                     </div>
                                     <p>
@@ -134,7 +135,7 @@
                                     <div class="solnuser">
                                         <span href="" class="solnusername">John doe</span>
                                         <span href="" class="approve">8</span>
-                                        <span href="" class="dissaprove">2</span> 
+                                        <span href="" class="disapprove">2</span> 
                                     </div>
                                     <p>
                                         Lorem, ipsum dolor sit amet consectetur adipisici
@@ -143,7 +144,7 @@
                             </div>
                         </div>    
                     </div>    
-                    <div class="topiccontent">
+                    <!-- <div class="topiccontent">
                             <div class="topicwrapper">
                                 <div class="userdetail">
                                     <div class="userpic">
@@ -174,7 +175,7 @@
                                             <div class="solnuser">
                                                 <span href="" class="solnusername">John doe</span>
                                                 <span href="" class="approve">8</span>
-                                                <span href="" class="dissaprove">2</span>
+                                                <span href="" class="disapprove">2</span>
                                                 
                                             </div>
                                             <p>
@@ -186,7 +187,7 @@
                                             <div class="solnuser">
                                                 <span href="" class="solnusername">John doe</span>
                                                 <span href="" class="approve">8</span>
-                                                <span href="" class="dissaprove">2</span> 
+                                                <span href="" class="disapprove">2</span> 
                                             </div>
                                             <p>
                                                 Lorem, ipsum dolor sit amet consectetur adipisici
@@ -196,7 +197,7 @@
                                             <div class="solnuser">
                                                 <span href="" class="solnusername">John doe</span>
                                                 <span href="" class="approve">8</span>
-                                                <span href="" class="dissaprove">2</span>
+                                                <span href="" class="disapprove">2</span>
                                                 
                                             </div>
                                             <p>
@@ -208,7 +209,7 @@
                                             <div class="solnuser">
                                                 <span href="" class="solnusername">John doe</span>
                                                 <span href="" class="approve">8</span>
-                                                <span href="" class="dissaprove">2</span>
+                                                <span href="" class="disapprove">2</span>
                                                 
                                             </div>
                                             <p>
@@ -223,7 +224,7 @@
                                             <div class="solnuser">
                                                 <span href="" class="solnusername">John doe</span>
                                                 <span href="" class="approve">8</span>
-                                                <span href="" class="dissaprove">2</span>
+                                                <span href="" class="disapprove">2</span>
                                                 
                                             </div>
                                             <p>
@@ -234,7 +235,7 @@
                                             <div class="solnuser">
                                                 <span href="" class="solnusername">John doe</span>
                                                 <span href="" class="approve">8</span>
-                                                <span href="" class="dissaprove">2</span>
+                                                <span href="" class="disapprove">2</span>
                                                 
                                             </div>
                                             <p>
@@ -246,7 +247,7 @@
                                             <div class="solnuser">
                                                 <span href="" class="solnusername">John doe</span>
                                                 <span href="" class="approve">8</span>
-                                                <span href="" class="dissaprove">2</span>
+                                                <span href="" class="disapprove">2</span>
                                                 
                                             </div>
                                             <p>
@@ -294,7 +295,7 @@
                                         <div class="solnuser">
                                             <span href="" class="solnusername">John doe</span>
                                             <span href="" class="approve">8</span>
-                                            <span href="" class="dissaprove">2</span>
+                                            <span href="" class="disapprove">2</span>
                                             
                                         </div>
                                         <p>
@@ -306,7 +307,7 @@
                                         <div class="solnuser">
                                             <span href="" class="solnusername">John doe</span>
                                             <span href="" class="approve">8</span>
-                                            <span href="" class="dissaprove">2</span> 
+                                            <span href="" class="disapprove">2</span> 
                                         </div>
                                         <p>
                                             Lorem, ipsum dolor sit amet consectetur adipisici
@@ -316,7 +317,7 @@
                                         <div class="solnuser">
                                             <span href="" class="solnusername">John doe</span>
                                             <span href="" class="approve">8</span>
-                                            <span href="" class="dissaprove">2</span>
+                                            <span href="" class="disapprove">2</span>
                                             
                                         </div>
                                         <p>
@@ -328,7 +329,7 @@
                                         <div class="solnuser">
                                             <span href="" class="solnusername">John doe</span>
                                             <span href="" class="approve">8</span>
-                                            <span href="" class="dissaprove">2</span>
+                                            <span href="" class="disapprove">2</span>
                                             
                                         </div>
                                         <p>
@@ -341,7 +342,7 @@
                                     </div>
                                 </div>
                         </div>
-                    </div>
+                    </div>  -->
                     
                 </div>
             </div>        

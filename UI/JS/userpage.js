@@ -10,18 +10,20 @@ let isClick = false;
 
 topic.addEventListener("click", event => {
   if (event.target.className === "reply") {
-    let repliesbar = event.target.parentElement.parentElement.parentElement.parentElement.querySelector(
-      ".solnwrapper"
-    ).children[1];
-    isClick = !isClick;
-    if (isClick) {
-      repliesbar.style.height = "350px";
-      repliesbar.style.opacity = "1";
+    let repliesbar =
+      event.target.parentElement.parentElement.parentElement.nextElementSibling
+        .children[1];
+    if (repliesbar.className == "solns") {
+      repliesbar.classList.add("open");
     } else {
-      repliesbar.style.height = "0";
-      repliesbar.style.opacity = "0";
+      repliesbar.classList.remove("open");
     }
   }
+});
+
+window.addEventListener("scroll", e => {
+  if (document.documentElement.scrollTop > 500) navbar.style.top = " 0";
+  else navbar.style.top = "-100px";
 });
 
 // navicon.addEventListener("click", e => {
