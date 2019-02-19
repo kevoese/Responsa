@@ -1,6 +1,11 @@
+@font-face {
+  font-family: myresponsa;
+  src: url("fonts/Darleston.otf");
+}
+
 body {
   text-align: center;
-  background-color: rgba(240, 240, 240, 0.63);
+  background-color: rgba(185, 185, 185, 0.363);
   margin: 0px;
 }
 
@@ -18,7 +23,7 @@ select:focus {
 }
 
 .bgndimg {
-  background: url("../images/responsabng4.jpg") no-repeat fixed;
+  background: url("../images/tech1l.jpeg") no-repeat fixed;
   background-size: cover;
 }
 
@@ -77,6 +82,7 @@ header {
   position: relative;
   width: 100%;
   flex-wrap: wrap;
+  background-color: rgba(0, 12, 6, 0.7);
 }
 
 header div {
@@ -89,18 +95,18 @@ header div {
 }
 
 header h1 {
-  opacity: 0.6;
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 200;
   text-align: center;
   padding-left: 10px;
   margin: 10px auto 0px auto;
-  font-size: 80px;
+  color: rgba(255, 255, 255);
+  font-family: myresponsa;
+  font-size: 6em;
+  letter-spacing: 0.1em;
+  font-weight: 100;
 }
 
 .aboutcontent {
-  opacity: 0.6;
+  opacity: 0.9;
   transition: opacity ease-out 500ms;
 }
 
@@ -144,22 +150,22 @@ a {
   background-color: rgb(216, 48, 6);
 } */
 
-.lnkclr{
+.lnkclr {
   background-color: rgba(255, 68, 0, 0.582);
   position: absolute;
   border-radius: 5px;
   z-index: -1;
-  top:0;
+  top: 0;
   left: 0;
   padding: 6px;
   transition: left ease-out 400ms;
 }
 
-.link2:hover  .lnkclr{
+.link2:hover .lnkclr {
   left: 182px;
 }
 
-.nxt:hover{
+.nxt:hover {
   border: 1px solid white;
   color: white;
 }
@@ -172,6 +178,9 @@ header:hover .aboutcontent {
   opacity: 0.8;
 }
 
+.wrapper {
+  z-index: 2;
+}
 /* ************************************
 Navigation bar styles
 ************************************ */
@@ -480,8 +489,9 @@ Featured topics styles
 .article {
   display: inline-block;
   flex-wrap: wrap;
-  margin: 20px 0px;
-  width: 100%;
+  width: 96%;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.753);
 }
 
 .topics {
@@ -492,13 +502,14 @@ Featured topics styles
 
 .wrapheader h2 {
   font-size: 25px;
-  color: black;
-  background-color: rgba(240, 240, 240, 1);
+  color: rgba(0, 0, 0, 0.705);
+  background-color: rgba(255, 255, 255, 0.753);
 }
 
 .wrapheader {
   width: 83%;
   margin-top: 30px;
+  background-color: rgba(185, 185, 185, 0.363);
 }
 
 .topicLists {
@@ -682,6 +693,7 @@ Register form styles
 .regbgnd {
   opacity: 0.75;
   transition: opacity ease-out 500ms;
+  background-color: rgba(30, 34, 31, 0.5);
 }
 
 .my-form {
@@ -712,7 +724,7 @@ Register form styles
 }
 
 .register:hover .darkbgnd {
-  background-color: rgba(30, 34, 31, 0.5);
+  background-color: rgba(30, 34, 31, 0.7);
   opacity: 1;
 }
 
