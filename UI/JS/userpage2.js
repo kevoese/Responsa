@@ -1,11 +1,12 @@
 const newtopic = document.querySelector(".topic");
 let commentsBar = null;
-
 const imageInput = document.querySelector(".createimgfile");
 const postContenTitle = document.querySelector(".createtopictitle");
 const postButton = document.querySelector(".create");
 const postContent = document.querySelector(".createfield");
 let pictureFile = null;
+let commentInput = null;
+let Isrefresh = false;
 
 let newsFeed = [
   {
@@ -117,7 +118,16 @@ let newsFeed = [
   }
 ];
 
+// const animate = classname =>{
+//   letdocument.querySelector(classname)
+//   .classList.add("animate");
+
+// }
+
 const postUpload = post => {
+  const refresh = document.querySelector(".feedrefresh");
+  refresh.textContent = "";
+  refresh.classList.add("animate");
   let formContent = new FormData();
   formContent.append("image", post.image);
   formContent.append("name", post.image.name);
@@ -129,29 +139,46 @@ const postUpload = post => {
     body: formContent
   };
 
-  fetch("https://api.imgur.com/3/image", data).then(response => {
-    response.json().then(data => {
-      console.log(data.data.link);
-      post.content.topicImg = data.data.link;
-      //make server request
-      newsFeed.push(post.content);
-      let newpost = createTopic(newsFeed[newsFeed.length - 1]);
-      newtopic.insertBefore(newpost, newtopic.children[1]);
+  fetch("https://api.imgur.com/3/image", data)
+    .then(response => {
+      response.json().then(data => {
+        post.content.topicImg = data.data.link;
+        //make server request
+        newsFeed.push(post.content);
+        refreshFeed(refresh);
+      });
+    })
+    .catch(err => {
+      bar.textContent = "Problem Updating Feed!! Please Refresh...";
+      bar.classList.remove("animate");
     });
-  });
 };
 
 imageInput.addEventListener("change", event => {
   pictureFile = imageInput.files[0];
 });
 
+addPosts = (file, obj) => {
+  readPath = new FileReader(); // create a file reader object
+  let path = null;
+  readPath.readAsDataURL(file); //read the content of the file as a url path
+  readPath.addEventListener("load", event => {
+    //add a load event which is triggered if a read is succesful before collecting path
+    path = event.target.result;
+    obj.topicImg = path;
+    let newpost = createTopic(obj);
+    newtopic.insertBefore(newpost, newtopic.children[0]);
+  });
+};
+
 postButton.addEventListener("click", event => {
+  postButton.style.zIndex = "-1";
   let date = new Date();
   date += "";
   date = date.split(" ");
   date = `${date[1]} ${date[2]} ${date[3]}`;
   let obj = {
-    topicID: 0,
+    topicID: newsFeed.length,
     title: postContenTitle.value,
     topicUser: "John Doe",
     topicDate: date,
@@ -161,9 +188,10 @@ postButton.addEventListener("click", event => {
     comments: []
   };
   let post = { image: pictureFile, content: obj };
-  postUpload(post);
+  addPosts(pictureFile, obj);
   postContent.value = "";
   postContenTitle.value = "";
+  postUpload(post);
 });
 
 createElement = (element, classname) => {
@@ -258,44 +286,66 @@ createTopic = post => {
 };
 
 displayfeed = newsFeed => {
-  newsFeed.reverse().forEach(post => {
+  let copyArr = JSON.parse(JSON.stringify(newsFeed));
+  copyArr.reverse().forEach(post => {
     newtopic.appendChild(createTopic(post));
   });
-  commentsBar = document.querySelectorAll(".solnwrapper");
+  commentInput = document.querySelectorAll(".solution");
 };
 
 displayfeed(newsFeed);
 
-commentsBar.forEach(div => {
-  div.addEventListener("click", event => {
-    let classType = event.target.className;
-    if (classType == "approve" || classType == "disapprove") {
-      let myStr = event.target.parentElement.parentElement.id;
-      let arr = myStr.split("_");
-      newsFeed[arr[0]].comments[arr[1]][classType] += 1;
-      console.log(newsFeed[arr[0]].comments[arr[1]].commentUser);
-      event.target.textContent = newsFeed[arr[0]].comments[arr[1]][classType];
-    }
+newtopic.addEventListener("click", event => {
+  let classType = event.target.className;
+  if (classType == "approve" || classType == "disapprove") {
+    let myStr = event.target.parentElement.parentElement.id;
+    let arr = myStr.split("_");
+    newsFeed[arr[0]].comments[arr[1]][classType] += 1;
+    event.target.textContent = newsFeed[arr[0]].comments[arr[1]][classType];
+  }
 
-    if (classType == "send") {
-      let commentBar = event.target.parentElement.nextSibling;
-      let topicID = event.target.parentElement.id;
-      let comment = event.target.previousSibling.value;
-      event.target.previousSibling.value = "";
-      let newComment = {
-        commentUser: "John",
-        approve: 0,
-        disapprove: 0,
-        commentContent: comment,
-        commentID: newsFeed[topicID].comments.length
-      };
-      newsFeed[topicID].comments.push(newComment);
-      let commentDiv = createSingleComment(newComment, topicID);
-      commentBar.insertBefore(commentDiv, commentBar.children[1]);
-      let commentNum = event.target.parentElement.parentElement.parentElement.querySelector(
-        ".reply"
-      );
-      commentNum.textContent = newsFeed[topicID].comments.length;
-    }
+  if (classType == "send") {
+    let commentBar = event.target.parentElement.nextSibling;
+    let topicID = event.target.parentElement.id;
+    let comment = event.target.previousSibling.value;
+    event.target.previousSibling.value = "";
+    event.target.style.zIndex = "-1";
+    let newComment = {
+      commentUser: "John",
+      approve: 0,
+      disapprove: 0,
+      commentContent: comment,
+      commentID: newsFeed[topicID].comments.length
+    };
+    newsFeed[topicID].comments.push(newComment);
+    let commentDiv = createSingleComment(newComment, topicID);
+    commentBar.insertBefore(commentDiv, commentBar.children[1]);
+    let commentNum = event.target.parentElement.parentElement.parentElement.querySelector(
+      ".reply"
+    );
+    commentNum.textContent = newsFeed[topicID].comments.length;
+  }
+});
+
+const refreshBtn = document.querySelector(".feedrefresh");
+
+const refreshFeed = element => {
+  element.textContent = "";
+  element.classList.add("animate");
+  newtopic.innerHTML = "";
+  displayfeed(newsFeed);
+  element.textContent = "Refresh Feed...";
+  element.classList.remove("animate");
+};
+
+refreshBtn.addEventListener("click", event => {
+  refreshFeed(event.target);
+});
+
+commentInput.forEach(element => {
+  element.addEventListener("keyup", event => {
+    let button = event.target.nextElementSibling;
+    if (isValid(event.target.value)) button.style.zIndex = "1";
+    else button.style.zIndex = "-1";
   });
 });

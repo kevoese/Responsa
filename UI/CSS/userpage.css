@@ -406,6 +406,10 @@ header {
   background-color: rgba(36, 35, 35, 0.9);
 }
 
+.create {
+  z-index: -1;
+}
+
 .linkwrappers {
   display: inline-flex;
 }
@@ -426,11 +430,17 @@ header {
   opacity: 0;
 }
 
+.article {
+  position: relative;
+}
+
 .topic {
   text-align: left;
   width: 100%;
+ 
   border-top: 15px solid rgba(185, 185, 185, 0.363);
   padding: 20px 0px;
+  padding-top: 50px;
   display: block;
 }
 
@@ -526,6 +536,7 @@ header {
   background-size: contain;
   right: 5px;
   bottom: 5px;
+  z-index: -1;
 }
 
 .solnbar {
@@ -570,29 +581,45 @@ header {
   margin: 10px;
 }
 
-.refresh {
-  height: 30px;
-  border: 2px solid rgba(185, 185, 185, 0.363);
-  background: url("../images/refresh.png") no-repeat center;
-  background-size: 15px;
-  margin: 0px 0px 20px;
-}
-
+.refresh,
 .feedrefresh {
-  height: 30px;
-  border: 1px solid rgba(185, 185, 185, 0.363);
-  background: url("../images/refresh.png") no-repeat center;
-  background-size: 20px;
   text-align: center;
-  font-size: 1em;
-  font-family: cambria;
-  color: rgba(2, 2, 2, 0.479);
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
+  color: rgba(58, 58, 58, 0.815);
+  border: 1px solid rgba(192, 191, 191, 0.603);
+  transition: all 0.5s;
+  cursor: pointer;
+  /* animation: load 2s linear infinite; */
 }
 
-.refresh:hover,
-.feedrefresh:hover {
-  background-color: rgba(185, 185, 185, 0.1);
+.feedrefresh{
+  position: relative;
+  top:  60px;
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.animate {
+  height: 14px;
+  width: 14px;
+  margin: 5px auto;
+  padding: 0px;
+  border: 4px solid rgba(192, 191, 191, 0);
+  border-top: 3px solid rgba(112, 112, 112, 0.575);
+  border-left: 3px solid rgba(112, 112, 112, 0.575);
+  border-bottom: 3px solid rgba(112, 112, 112, 0.575);
+  border-radius: 50%;
+  overflow: hidden;
+  animation: load 2s 0.5s linear infinite;
 }
 
 .open {

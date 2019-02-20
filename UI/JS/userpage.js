@@ -1,12 +1,14 @@
 const openComment = document.querySelectorAll(".reply");
 const repliesBar = document.querySelector(".solns");
 const topic = document.querySelector(".topic");
+const inputs = document
+  .querySelector(".createTopic")
+  .querySelectorAll(".collect");
 
 const navbar = document.querySelector(".navbar");
 const navicon = document.querySelector("#navicon");
 const navheaders = document.querySelectorAll(".navmenu h2");
 let flag = false;
-let isClick = false;
 
 topic.addEventListener("click", event => {
   if (event.target.className === "reply") {
@@ -26,6 +28,25 @@ window.addEventListener("scroll", e => {
   else navbar.style.top = "-100px";
 });
 
+const title = document.querySelector(".createtopictitle");
+const button = document.querySelector(".create");
+const content = document.querySelector(".createfield");
+
+const isValid = value => {
+  let emptyField = /^\s*$/;
+  if (emptyField.test(value)) return false;
+  return true;
+};
+
+inputs.forEach(element => {
+  element.addEventListener("keyup", event => {
+    if (event.className != "createimgfile") {
+      if (isValid(title.value) && isValid(content.value)) {
+        button.style.zIndex = "1";
+      } else button.style.zIndex = "-1";
+    }
+  });
+});
 // navicon.addEventListener("click", e => {
 //   flag = !flag;
 //   if (flag) {
