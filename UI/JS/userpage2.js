@@ -11,15 +11,15 @@ let Isrefresh = false;
 let newsFeed = [
   {
     topicID: 0,
-    title: "MPU6050",
-    topicUser: "John Doe",
+    title: "MPU6050 big topic",
+    topicUser: "John Doe cool",
     topicDate: "Feb 5 2019",
     userImg: "images/dummy3.jpg",
     topicImg: "images/responsabng4.jpg",
     topicContent: "lorem shit bla bla bla",
     comments: [
       {
-        commentUser: "Paul efe",
+        commentUser: "Paul efe oghene",
         approve: 3,
         disapprove: 5,
         commentContent: "some comment shits here",

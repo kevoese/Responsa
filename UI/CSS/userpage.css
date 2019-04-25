@@ -590,7 +590,7 @@ header {
   border: 1px solid rgba(192, 191, 191, 0.603);
   transition: all 0.5s;
   cursor: pointer;
-  /* animation: load 2s linear infinite; */
+  /* animation: load 2s linear infinite;*/ 
 }
 
 .feedrefresh{
