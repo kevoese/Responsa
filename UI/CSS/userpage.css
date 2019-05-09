@@ -1,0 +1,671 @@
+@font-face {
+  font-family: myresponsa;
+  src: url("fonts/Darleston.otf");
+}
+
+body {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.753);
+  background-color: rgba(185, 185, 185, 0.363);
+  margin: 0px;
+  position: relative;
+}
+
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+.myfont {
+  letter-spacing: 0.1em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+button {
+  transition: 0.4s;
+}
+
+header {
+  left: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.8);
+  background: url("../images/tech1l.jpeg") fixed no-repeat center;
+  background-size: cover;
+  z-index: 2;
+  width: 100%;
+  height: 500px;
+  top: 0;
+  position: relative;
+  display: flex;
+}
+
+.bgnd {
+  background-color: rgba(0, 12, 6, 0.7);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.menu {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  display: inline-block;
+}
+
+.editprofile {
+  display: inline-flex;
+  margin: 10px;
+}
+
+.editprofile:hover .imgwrap {
+  opacity: 1;
+}
+
+.notifbar {
+  margin: 10px 10px;
+  position: absolute;
+  display: inline-flex;
+  right: 0px;
+}
+
+.notifbar div {
+  padding: 10px 2px;
+  margin: 0px 5px;
+}
+
+.notif a {
+  padding: 10px;
+}
+
+.notif span {
+  padding: 7px 10px;
+  background-color: rgba(114, 112, 112, 0.6);
+  border-radius: 100%;
+}
+
+.notifbar a {
+  padding: 10px 2px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  font-family: Times;
+  cursor: pointer;
+}
+
+.menu a {
+  align-self: center;
+  padding: 15px 20px;
+  margin: 0px 10px;
+  border: 1px solid rgba(114, 112, 112, 0.637);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  transition: 0.4s;
+}
+
+.menu a:hover {
+  background-color: rgba(114, 112, 112, 0.637);
+  border-color: rgba(114, 112, 112, 0.637);
+  color: white;
+}
+
+.menu div {
+  margin: 10px 0px;
+}
+
+.menu div:nth-child(2) {
+  text-align: right;
+}
+
+.imgwrap {
+  width: 70px;
+  height: 61px;
+  border-radius: 100%;
+  background: url("../images/dummy.jpeg") no-repeat center;
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.responsa {
+  position: absolute;
+  top: 15%;
+  left: 12%;
+  bottom: 0;
+  color: rgba(255, 255, 255, 0.961);
+  font-family: myresponsa;
+  font-size: 5em;
+  letter-spacing: 0.1em;
+  font-weight: 100;
+}
+
+.find {
+  text-align: left;
+  position: absolute;
+  align-self: center;
+  left: 10%;
+  right: 45%;
+}
+
+.find input {
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  background: url("../images/mail_find.png") no-repeat;
+  background-size: 6%;
+  background-position: 99% 50%;
+  color: white;
+  font-size: 1em;
+  padding: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  border: 1px solid rgba(202, 202, 202, 0.459);
+}
+
+/* ************************************
+  Navigation bar styles
+  ************************************ */
+
+.navbar {
+  background-color: rgb(0, 7, 12);
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  color: white;
+  flex-wrap: wrap;
+  z-index: 1;
+  position: fixed;
+  opacity: 1;
+  top: -100px;
+  transition: 1s;
+}
+
+.one {
+  font-family: myresponsa;
+  font-size: 2em;
+  position: fixed;
+  top: 5px;
+  left: 20px;
+  z-index: 3;
+  color: white;
+  font-weight: 100px;
+  letter-spacing: 0.1em;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.look {
+  float: left;
+  margin: 0px 0px 21px 400px;
+  display: flex;
+}
+
+.look input {
+  background-color: transparent;
+  align-self: center;
+  color: white;
+  border: none;
+  width: 250px;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(209, 209, 209, 0.5);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 10px 10px;
+  transition: width ease-out 0.8s;
+}
+
+.look input:focus {
+  width: 400px;
+}
+
+.ulwrap {
+  float: right;
+  margin-right: 20px;
+  display: inline;
+}
+
+.ulwrap div {
+  display: inline-flex;
+  transition: all ease-out 300ms;
+  cursor: pointer;
+  padding: 20px 25px 22px;
+  position: relative;
+}
+
+.navbar a {
+  color: rgba(226, 226, 226, 0.87);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  align-self: center;
+  z-index: 2;
+}
+
+.ulwrap div::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(114, 112, 112, 0.637);
+  transition: top ease-out 0.3s;
+}
+
+.ulwrap div:hover::after {
+  top: 0;
+}
+
+.mainbody {
+  background-color: rgba(185, 185, 185, 0.363);
+  background-color: rgba(255, 255, 255, 0.753);
+  display: inline-flex;
+  padding: 0;
+  width: 94%;
+  position: relative;
+  margin: 10px 5% 10px 0;
+}
+
+.main {
+  padding: 10px 0;
+  margin: 50px 0px;
+  width: 100%;
+}
+
+.sidebar {
+  background-color: transparent;
+  width: 60px;
+  height: 300px;
+  padding: 10px 0;
+  position: fixed;
+  right: 10px;
+  top: 100px;
+  z-index: 3;
+  text-align: center;
+}
+
+.sidebar div {
+  transition: 0.3s;
+}
+
+.fb {
+  background: url(../images/fbbright.png) center no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.fb:hover {
+  background-image: url(../images/fbdark.png);
+}
+
+.twitr {
+  background: url(../images/twitterbright.png) center no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.twitr:hover {
+  background-image: url(../images/twitterdark.png);
+}
+
+.yout {
+  background: url(../images/youtubebright.png) center no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.yout:hover {
+  background-image: url(../images/youtubedark.png);
+}
+
+.createTopic,
+.topicwrapper {
+  text-align: left;
+  box-shadow: 4px 1px 7px rgb(49, 49, 49);
+  background-color: white;
+  display: block;
+  margin: 10px;
+}
+
+.createTopic {
+  width: 500px;
+}
+
+.createTopic input {
+  font-family: cambria;
+  display: block;
+  color: black;
+  width: 95%;
+  font-size: 1.1em;
+  padding: 5px;
+  border: none;
+  height: 50px;
+  transition: 0.4s;
+  border-bottom: 2px solid grey;
+}
+
+.createTopic textarea {
+  min-width: 98%;
+  min-height: 150px;
+  max-width: 98%;
+  max-height: 150px;
+  font-size: 1.1em;
+  font-family: cambria;
+  color: black;
+  padding: 5px;
+  border: none;
+  margin-bottom: 20px;
+  transition: 0.4s;
+}
+
+.postwrap {
+  display: inline-flex;
+}
+
+.postwrap div {
+  opacity: 1;
+}
+
+.linkwrappers {
+  margin: 10px;
+}
+
+.createTopic span,
+.file-input button {
+  padding: 0.7em 1em;
+  font-size: 0.9em;
+  background-color: rgba(68, 68, 68, 0.986);
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+}
+
+.createTopic span:hover,
+.file-input:hover .addphoto {
+  background-color: rgba(36, 35, 35, 0.9);
+}
+
+.create {
+  z-index: -1;
+}
+
+.linkwrappers {
+  display: inline-flex;
+}
+
+.file-input {
+  width: 100px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.file-input input {
+  position: absolute;
+  height: 39px;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.article {
+  position: relative;
+}
+
+.topic {
+  text-align: left;
+  width: 100%;
+ 
+  border-top: 15px solid rgba(185, 185, 185, 0.363);
+  padding: 20px 0px;
+  padding-top: 50px;
+  display: block;
+}
+
+.topiccontent {
+  padding: 0px;
+  display: inline-flex;
+}
+
+.topicimg {
+  width: 100%;
+  height: 300px;
+}
+
+.topicwrapper {
+  width: 500px;
+  padding: 10px 0;
+}
+
+.topicwrapper div,
+.topicwrapper h2,
+.topicwrapper p {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.userdetail {
+  display: inline-flex;
+  width: 95%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid grey;
+}
+
+.userdetail a {
+  align-self: center;
+  font-size: 1.5em;
+  font-family: cambria;
+  padding: 0px 8px;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.userimg {
+  width: 80px;
+  height: 70px;
+  border-radius: 100%;
+}
+
+.replywrap span {
+  color: rgb(65, 64, 64);
+  margin-left: 10px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.date {
+  background: url("../images/date.png") left no-repeat;
+  background-size: 30px;
+  padding: 7px 5px 7px 40px;
+}
+
+.reply {
+  background: url("../images/replies.png") left no-repeat;
+  background-size: 20px;
+  padding: 7px 5px 7px 30px;
+}
+
+.solnwrapper {
+  margin-top: 10px;
+  width: 350px;
+  font-family: cambria;
+}
+
+.solution {
+  min-width: 350px;
+  min-height: 100px;
+  max-width: 350px;
+  max-height: 100px;
+  font-size: 1em;
+  font-family: cambria;
+  color: black;
+  padding: 5px 30px 20px 5px;
+  box-shadow: 4px 1px 7px rgb(49, 49, 49);
+}
+
+.send {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url("../images/sendbright.png") center no-repeat;
+  background-size: contain;
+  right: 5px;
+  bottom: 5px;
+  z-index: -1;
+}
+
+.solnbar {
+  position: relative;
+  width: 380px;
+}
+
+.send:hover {
+  background-image: url("../images/senddark.png");
+}
+
+.soln_no {
+  padding: 10px;
+  width: 98%;
+  color: white;
+  text-align: center;
+  background: url("../images/reply.png") no-repeat center;
+  background-size: 20%;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid orangered;
+}
+
+.solns {
+  background-color: transparent;
+  color: rgb(65, 64, 64);
+  max-height: 400px;
+  min-height: 0px;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid rgb(192, 191, 191);
+  padding-left: 30px;
+  height: 0px;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: height ease-out 500ms;
+}
+
+.solns p {
+  border-bottom: 2px solid rgba(185, 185, 185, 0.363);
+  padding-bottom: 10px;
+  margin: 10px;
+}
+
+.refresh,
+.feedrefresh {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  color: rgba(58, 58, 58, 0.815);
+  border: 1px solid rgba(192, 191, 191, 0.603);
+  transition: all 0.5s;
+  cursor: pointer;
+  /* animation: load 2s linear infinite;*/ 
+}
+
+.feedrefresh{
+  position: relative;
+  top:  60px;
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.animate {
+  height: 14px;
+  width: 14px;
+  margin: 5px auto;
+  padding: 0px;
+  border: 4px solid rgba(192, 191, 191, 0);
+  border-top: 3px solid rgba(112, 112, 112, 0.575);
+  border-left: 3px solid rgba(112, 112, 112, 0.575);
+  border-bottom: 3px solid rgba(112, 112, 112, 0.575);
+  border-radius: 50%;
+  overflow: hidden;
+  animation: load 2s 0.5s linear infinite;
+}
+
+.open {
+  height: 350px;
+  opacity: 1;
+}
+
+.solnuser {
+  margin-left: 10px;
+}
+
+.solnuser span {
+  color: rgb(65, 64, 64);
+  padding: 7px 5px 7px 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.solnusername {
+  background: url("../images/user1.png") left no-repeat;
+  background-size: 30px;
+}
+
+.approve {
+  background: url("../images/approve.png") left no-repeat;
+  background-size: 30px;
+}
+
+.disapprove {
+  background: url("../images/dissaprove.png") left no-repeat;
+  background-size: 30px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darkgrey;
+}
